@@ -85,8 +85,10 @@ git clone https://github.com/strencher-kernel/bd-compat
 ```
 
 **CumcordLoader:**
+
+Download the folder and move it into your packages folder.
 ```sh
-git clone https://github.com/kernel-mod/packages/tree/master/CumcordLoader
+https://github.com/kernel-mod/packages/tree/master/CumcordLoader
 ```
 
 ## Step 7 | Settings
