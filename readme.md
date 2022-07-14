@@ -1,4 +1,4 @@
-# Kernel guide for Windows
+# Kernel guide for Linux
 
 This guide shows how to create a Discord setup with Kernel, Goosemod, OpenAsar, Powercord, BetterDiscord and Cumcord.
 
@@ -7,28 +7,34 @@ This guide shows how to create a Discord setup with Kernel, Goosemod, OpenAsar, 
 You will need a recent [**node.js**](https://nodejs.org/) version, with [**pnpm**](https://pnpm.io) installed, regardless of the way you install Kernel.
 To do that, after installing it open a terminal and run:
 
-- open PowerShell as Administrator and run this in the terminal:
+- open terminal and run this:
 ```sh
-iwr https://get.pnpm.io/install.ps1 -useb | iex
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 ```
 
 ## Step 2 | Install [Discord Development](https://discord.com/)
 
-- [Download](https://discordapp.com/api/download/development?platform=win) Discord Development
+- [Download](https://discordapp.com/api/download/development?platform=linux) Discord Development
 
-## Step 3 | Install [Kernel](https://github.com/kernel-mod/installer-gui)
+## Step 3 | Install [Kernel](https://github.com/kernel-mod/installer-cli)
 
-- Download the latest [Kernel-Windows.exe](https://github.com/kernel-mod/installer-gui/releases/latest).
+- Download the latest [kernal-installer](https://github.com/kernel-mod/installer-cli/releases/latest).
 
-- Run the installer, click [install](https://i.imgur.com/ey99wYY.png) and then it should [automatically detect](https://i.imgur.com/PS5Ol31.png) the path to your discord installations.
+- Create a folder you would like to use for kernel's plugins and place the installer there 
 
-- Then click on Install. Make sure both the [toggles](https://i.imgur.com/02fmhn0.png) are set to "On".
+- By default the folder discord has its resources, is owned by the root user. Run this to make it accessable to the current user   
+```sh
+sudo chown -R $USER: /usr/share/discord-development/resources
+```
 
-- To verify if the installation was successful, open discord, press ctrl+shift+i and see if it says ["Loading Packages..."](https://i.imgur.com/MlBvPaG.png) anywhere.
+- Now, run this to install kernel (replace anything with {} as needed)
+```sh
+./kernel-install-{cpu type}-linux -i /usr/share/discord-development/resources -k {path to the folder u made for kernel}
+```
 
 ## Step 4 | Install [GooseMod](https://github.com/GooseMod/GooseMod)
 
-- navigate to ``%appdata%\discord<channel>\``
+- navigate to ``~/.config/discorddevelopment``
 
 - There should be a [settings.json](https://i.imgur.com/duc2for.png), add the following lines after the first line of the contents (below the ``{``):
 
@@ -43,9 +49,9 @@ iwr https://get.pnpm.io/install.ps1 -useb | iex
 
 - [Download](https://github.com/GooseMod/OpenAsar/releases/download/nightly/app.asar) the latest version of OpenAsar
 
-- navigate to ``%localappdata%\Discord\app-1.0.xx\resources\app-original.asar``
+- navigate to ``/usr/share/discord-development/resources``
 
-- Backup your original app.asar (rename to app-original.asar.backup / etc)
+- Backup your original app-original.asar (rename to app-original.asar.backup / etc)
 
 - Install OpenAsar app.asar into the original path and rename it to ``app-original.asar``
 
@@ -275,4 +281,4 @@ https://cumcordplugins.github.io/Condom/yellowsink.github.io/cc-plugins/cumstain
 ```
 </details>
 
-![image](https://user-images.githubusercontent.com/58918358/178970815-71454187-35ce-41db-80f5-c652301455af.png)
+![image](https://user-images.githubusercontent.com/58918358/178970815-71454187-35ce-41db-80f5-c652301455af.png)   
