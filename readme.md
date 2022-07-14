@@ -77,6 +77,9 @@ git clone https://github.com/strencher-kernel/no-sentry
 **pc-compat:**
 ```sh
 git clone https://github.com/strencher-kernel/pc-compat
+cd pc-compat
+pnpm initialize
+pnpm i
 ```
 
 **bd-compat:**
