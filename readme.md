@@ -43,8 +43,8 @@ sudo chown -R $USER: /usr/share/discord-development/resources
 "NEW_UPDATE_ENDPOINT": "https://updates.goosemod.com/goosemod/",
 ```
 
-- Restart Discord by quitting via the system tray icon, then opening it again.
-
+- Restart Discord by quitting via the system tray icon, then opening it again.   
+<sub>if this causes connection issues, use [this](https://github.com/WmeLuna/Discord-Kernel-Linux-Guide/raw/master/honkloader.plugin.js) plugin to inject goosemod through bd-compat</sub>
 ## Step 5 | Install [OpenAsar](https://github.com/GooseMod/OpenAsar)
 
 - [Download](https://github.com/GooseMod/OpenAsar/releases/download/nightly/app.asar) the latest version of OpenAsar
@@ -85,7 +85,6 @@ git clone https://github.com/strencher-kernel/no-sentry
 git clone https://github.com/strencher-kernel/pc-compat
 cd pc-compat
 pnpm initialize
-pnpm i
 ```
 
 **bd-compat:**
@@ -94,9 +93,10 @@ git clone https://github.com/strencher-kernel/bd-compat
 ```
 
 **CumcordLoader:**
-
-[Download](https://github.com/kernel-mod/packages/tree/master/CumcordLoader) the folder and move it into your packages folder.
-
+##### Use powercord's packages to install this one (will be created in your kernel folder after a launch with pc-compat)
+```sh
+git clone https://github.com/CumcordLoaders/Powercord
+```
 
 ## Step 7 | Settings
 
